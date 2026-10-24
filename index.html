@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Bhavish Sanatani Buddha Coaching</title>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #2563eb;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Language Switcher Bar */
+        .lang-bar {
+            background-color: #1e293b;
+            padding: 10px 20px;
+            text-align: right;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .lang-btn {
+            background: #334155;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--accent-color);
+        }
+
+        /* Header Layout */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+
+        /* Information Details Card */
+        .info-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Form Card Design */
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .form-card h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+        }
+        .submit-btn:disabled {
+            background-color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        /* Status and Alert Box */
+        .date-alert {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Footer Info */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Multilingual Buttons -->
+    <div class="lang-bar">
+        <button class="lang-btn active" onclick="changeLanguage('hi')">Hindi</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+        <button class="lang-btn" onclick="changeLanguage('pb')">Punjabi</button>
+    </div>
+
+    <!-- Website Header -->
+    <header>
+        <h1 id="main-title">Technology Bhavish Sanatani Buddha</h1>
+    </header>
+
+    <div class="container">
+        
+        <!-- Left Side: Center Overview & Features -->
+        <div class="info-card">
+            <p id="about-desc">हमारा कोचिंग सेंटर सभी वर्गों और समुदायों के छात्रों को उच्च स्तरीय तकनीकी शिक्षा देकर उनका भविष्य उज्जवल बनाने के लिए प्रतिबद्ध है।</p>
+            
+            <h3 id="facilities-heading">विशेषताएं और सुविधाएं:</h3>
+            <ul class="feature-list" id="features">
+                <li>हाई-स्पीड अनलिमिटेड मुफ्त Wi-Fi की सुविधा</li>
+                <li>एक बड़ा और बेहतरीन कोचिंग सेंटर कैंपस (Big Campus)</li>
+                <li>अनुभवी टीचर्स और पढ़ाई का सबसे शानदार माहौल (Best Teachers)</li>
+                <li>सभी छात्रों के साथ समान और बहुत अच्छा व्यवहार (Good Behavior)</li>
+            </ul>
+
+            <h3 id="timing-heading">कोचिंग का समय (Timings):</h3>
+            <p id="timing-desc">🕒 सुबह 7:00 बजे से रात 8:00 बजे तक (सोमवार से शनिवार)</p>
+
+            <h3 id="contact-heading">अधिक जानकारी या सहायता के लिए संपर्क करें:</h3>
+            <p style="font-size: 1.2rem; font-weight: bold; color: #2563eb; margin: 5px 0;">
+                📞 कॉल / WhatsApp: 9837963213
+            </p>
+            <p id="contact-note" style="font-size: 0.95rem; color: #64748b;">(किसी भी प्रकार के विवरण के लिए ऊपर दिए गए नंबर पर तुरंत संपर्क करें)</p>
+        </div>
+
+        <!-- Right Side: Admission Form Area -->
+        <div class="form-card">
+            <h2 id="form-heading">कोचिंग एडमिशन फॉर्म</h2>
+            
+            <!-- Date Alert Banner -->
+            <div class="date-alert" id="date-msg">
+                📢 <strong>सूचना:</strong> ऑनलाइन एडमिशन फॉर्म 1 नवंबर 2026 (01/11/2026) से भरना शुरू होंगे।
+            </div>
+
+            <form id="regForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label id="lbl-name" for="name">पूरा नाम (Full Name)</label>
+                    <input type="text" id="name" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-address" for="address">पता (Address)</label>
+                    <input type="text" id="address" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-state" for="state">राज्य (State)</label>
+                    <input type="text" id="state" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-class" for="class">कक्षा / कोर्स (Class / Course)</label>
+                    <select id="class" required disabled>
+                        <option value="">चुनें / Select Course</option>
+                        <option value="HTML">HTML</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="CCC">CCC</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-school" for="school">स्कूल / कॉलेज का नाम (School Name)</label>
+                    <input type="text" id="school" required disabled>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-mobile" for="mobile">मोबाइल नंबर (Mobile / WhatsApp)</label>
+                    <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="10 अंकों का नंबर भरें" required disabled>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn" disabled>फॉर्म जमा करें (Submit Form)</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Technology Bhavish Sanatani Buddha Coaching. All Rights Reserved.</p>
+    </footer>
+
+    <!-- App Engine Languages and Lock Logic -->
+    <script>
+        // Language Database
+        const translations = {
+            hi: {
+                aboutDesc: "हमारा कोचिंग सेंटर सभी वर्गों और समुदायों के छात्रों को उच्च स्तरीय तकनीकी शिक्षा देकर उनका भविष्य उज्जवल बनाने के लिए प्रतिबद्ध है।",
+                facilitiesHeading: "विशेषताएं और सुविधाएं:",
+                features: [
+                    "हाई-स्पीड अनलिमिटेड मुफ्त Wi-Fi की सुविधा",
+                    "एक बड़ा और बेहतरीन कोचिंग सेंटर कैंपस (Big Campus)",
+                    "अनुभवी टीचर्स और पढ़ाई का सबसे शानदार माहौल (Best Teachers)",
+                    "सभी छात्रों के साथ समान और बहुत अच्छा व्यवहार (Good Behavior)"
+                ],
+                timingHeading: "कोचिंग का समय (Timings):",
